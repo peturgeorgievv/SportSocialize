@@ -1,12 +1,12 @@
 import React from 'react';
 import Video from './Video';
-import Reasons from './Reasons';
+import SideMenu from './SideMenu';
 
 const Landing = () => {
   return (
     <div>
       <Video />
-      <Reasons />
+      <SideMenu />
     </div>
   );
 };

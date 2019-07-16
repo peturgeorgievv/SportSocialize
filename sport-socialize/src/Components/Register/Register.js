@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Form = styled.form`
-  margin-top: 6%;
   padding-left: 15px;
   input {
     display: block;
@@ -61,6 +60,28 @@ const Register = () => {
             name="psw-repeat"
             required
           />
+          <label for="activity-sport">
+            <b>Activity (Sport) </b>
+          </label>
+          <br />
+          <select name="activity-sport">
+            <option value="">Boxing</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+          <br />
+
+          <label for="account-type">
+            <b>Type of Account</b>
+          </label>
+          <br />
+          <select name="account-type">
+            <option value="1">Manager</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
 
           <p>
             By creating an account you agree to our{' '}
