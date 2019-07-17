@@ -6,6 +6,7 @@ import ForgPassword from './register/ForgPassword';
 import Login from '../components/landing/Login';
 import SignedIn from '../components/signed-in/SignedIn';
 import Messages from '../components/signed-in/Messages';
+import UserProfile from '../components/signed-in/UserProfile';
 import styled from 'styled-components';
 
 const FullPage = styled.div`
@@ -23,6 +24,7 @@ const App = () => {
           <Route exact path="/register" component={Register} />
           <Route exact path="/forgpassword" component={ForgPassword} />
           <Route exact path="/logged" component={SignedIn} />
+          <Route exact path="/logged/user" component={UserProfile} />
           <Route exact path="/messages" component={Messages} />
         </div>
       </BrowserRouter>
