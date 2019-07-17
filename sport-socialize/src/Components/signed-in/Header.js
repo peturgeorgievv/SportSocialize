@@ -1,9 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
   position: fixed;
-  display: inline-block;
   top: 0;
   width: 100%;
   background-color: #172a08;
@@ -32,6 +32,7 @@ const Wrapper = styled.div`
 const Button = styled.button`
   display: block;
   font-weight: bold;
+  font-size: small;
   width: 110px;
   color: white;
   background-color: #234806;
@@ -60,10 +61,21 @@ const Header = () => {
         src={require('./imgs/profile-cover.jpg')}
         alt="profile-cover"
       />
-      <Button>Chat</Button>
-      <Button>Friends</Button>
-      <Button>Search</Button>
-      <Button>Settings</Button>
+      <Link to="/messages">
+        <Button>Chat</Button>
+      </Link>
+      <Link to="/logged/friends">
+        <Button>Friends</Button>
+      </Link>
+      <Link to="/search">
+        <Button>Search</Button>
+      </Link>
+      <Link to="/logged/settings">
+        <Button>Settings</Button>
+      </Link>
+      <Link to="/">
+        <Button>Sign Out</Button>
+      </Link>
     </Wrapper>
   );
 };

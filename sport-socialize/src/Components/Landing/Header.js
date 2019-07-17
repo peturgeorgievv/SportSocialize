@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -39,9 +40,15 @@ const Header = () => {
     <Wrapper>
       <h2>SportSocialize</h2>
       <img src={require('./imgs/logo.jpg')} alt="logo" />
-      <Button>Sign In</Button>
-      <Button>Register</Button>
-      <Button>Forgotten Password</Button>
+      <Link to="/logged">
+        <Button>Sign In</Button>
+      </Link>
+      <Link to="/register">
+        <Button>Register</Button>
+      </Link>
+      <Link to="/forgpassword">
+        <Button>Forgotten Password</Button>
+      </Link>
     </Wrapper>
   );
 };

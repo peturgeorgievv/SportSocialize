@@ -8,6 +8,7 @@ import SignedIn from '../components/signed-in/SignedIn';
 import Messages from '../components/signed-in/Messages';
 import UserProfile from '../components/signed-in/UserProfile';
 import styled from 'styled-components';
+import MainFooter from './footer/MainFooter';
 
 const FullPage = styled.div`
   background: #d5feb3;
@@ -28,6 +29,7 @@ const App = () => {
           <Route exact path="/messages" component={Messages} />
         </div>
       </BrowserRouter>
+      <MainFooter />
     </FullPage>
   );
 };
