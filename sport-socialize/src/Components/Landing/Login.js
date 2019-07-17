@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from './Header';
 import styled from 'styled-components';
 
 const LogInWrapper = styled.div`
@@ -107,6 +108,7 @@ const LogInWrapper = styled.div`
 const Login = () => {
   return (
     <LogInWrapper>
+      <Header />
       <div class="container">
         <form>
           <div class="row">
