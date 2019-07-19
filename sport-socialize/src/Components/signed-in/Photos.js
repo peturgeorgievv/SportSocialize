@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const PhotosWrapper = styled.div`
-  width: 47%;
   display: inline-block;
   margin: 10px;
   border: 7px solid #172a08;

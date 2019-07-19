@@ -4,9 +4,8 @@ import Photos from './Photos';
 import styled from 'styled-components';
 
 const MediaWrapper = styled.div`
-  width: 100%;
-  padding: 10px;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   button {
     float: right;
     font-weight: bold;
@@ -18,16 +17,20 @@ const MediaWrapper = styled.div`
     :hover {
       background-color: green;
     }
+    #videos {
+      grid-column: 1;
+    }
+    #photos {
+      grid-column: 2;
+    }
   }
 `;
 
 const Media = () => {
   return (
     <MediaWrapper>
-      <div>
-        <Videos />
-        <Photos />
-      </div>
+      <Videos id="videos" />
+      <Photos id="photos" />
     </MediaWrapper>
   );
 };

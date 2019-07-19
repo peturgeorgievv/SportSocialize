@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const VideosWrapper = styled.div`
-  width: 47%;
   margin: 10px;
   display: inline-block;
   border: 7px solid #172a08;

@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  position: fixed;
-  display: inline-block;
-  top: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr 1fr 3fr;
   width: 100%;
   background-color: #172a08;
   h2 {
@@ -20,11 +19,16 @@ const Wrapper = styled.div`
   }
   button {
     color: white;
+    display: inline-block;
+  }
+  .buttons {
+    grid-column: 5;
   }
 `;
 
 const Button = styled.button`
-  float: right;
+  display: grid;
+  grid-column: 5;
   font-weight: bold;
   background-color: #234806;
   margin: 10px 10px 10px 10px;
@@ -40,15 +44,17 @@ const Header = () => {
     <Wrapper>
       <h2>SportSocialize</h2>
       <img src={require('./imgs/logo.jpg')} alt="logo" />
-      <Link to="/logged">
-        <Button>Sign In</Button>
-      </Link>
-      <Link to="/register">
-        <Button>Register</Button>
-      </Link>
-      <Link to="/forgpassword">
-        <Button>Forgotten Password</Button>
-      </Link>
+      <div className="buttons">
+        <Link to="/register">
+          <Button>Register</Button>
+        </Link>
+        <Link to="/forgpassword">
+          <Button>Forgotten Password</Button>
+        </Link>
+        <Link to="/logged">
+          <Button>Sign In</Button>
+        </Link>
+      </div>
     </Wrapper>
   );
 };

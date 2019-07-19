@@ -37,7 +37,7 @@ const MessageFeed = () => {
           <div className="user-info">
             <img
               className="user-pic"
-              src={require('./imgs/profil-pic-post.jpg')}
+              src={require('../imgs/profil-pic-post.jpg')}
               alt="profile-pic-user"
             />
             <h3>Petar Georgiev Georgiev</h3>
@@ -48,7 +48,7 @@ const MessageFeed = () => {
           <div className="user-info">
             <img
               className="user-pic"
-              src={require('./imgs/profil-pic-post.jpg')}
+              src={require('../imgs/profil-pic-post.jpg')}
               alt="profile-pic-user"
             />
             <h3>Some Guy</h3>
@@ -59,7 +59,7 @@ const MessageFeed = () => {
           <div className="user-info">
             <img
               className="user-pic"
-              src={require('./imgs/profil-pic-post.jpg')}
+              src={require('../imgs/profil-pic-post.jpg')}
               alt="profile-pic-user"
             />
             <h3>Angry Guy Ivanov</h3>

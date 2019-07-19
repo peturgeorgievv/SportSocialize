@@ -5,14 +5,16 @@ import Register from './register/Register';
 import ForgPassword from './register/ForgPassword';
 import Login from '../components/landing/Login';
 import SignedIn from '../components/signed-in/SignedIn';
-import Messages from '../components/signed-in/Messages';
-import UserProfile from '../components/signed-in/UserProfile';
+import Messages from '../components/signed-in/messages/Messages';
+import UserProfile from '../components/signed-in/user-profile/UserProfile';
+import Friends from '../components/signed-in/friends/Friends';
 import styled from 'styled-components';
 import MainFooter from './footer/MainFooter';
+import Settings from './signed-in/settings/Settings';
+import Search from './signed-in/search/Search';
 
 const FullPage = styled.div`
   background: #d5feb3;
-  margin-top: 6%;
 `;
 
 const App = () => {
@@ -26,7 +28,10 @@ const App = () => {
           <Route exact path="/forgpassword" component={ForgPassword} />
           <Route exact path="/logged" component={SignedIn} />
           <Route exact path="/logged/user" component={UserProfile} />
-          <Route exact path="/messages" component={Messages} />
+          <Route exact path="/logged/friends" component={Friends} />
+          <Route exact path="/logged/settings" component={Settings} />
+          <Route exact path="/logged/search" component={Search} />
+          <Route exact path="/logged/messages" component={Messages} />
         </div>
       </BrowserRouter>
       <MainFooter />
