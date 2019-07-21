@@ -8,16 +8,14 @@ const MessagesWrapper = styled.div`
   padding: 10px;
   text-align: center;
   button {
-    display: inline;
+    display: block;
     font-weight: bold;
     width: 100%;
     color: white;
-    background-color: #234806;
-    margin: 5px;
-    border: 7px solid #172a08;
-    border-radius: 5px;
+    background-color: #116530;
+    border-radius: 10px;
     :hover {
-      background-color: green;
+      background-color: #00a300;
     }
   }
 `;

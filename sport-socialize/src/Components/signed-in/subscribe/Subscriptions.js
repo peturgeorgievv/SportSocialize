@@ -15,9 +15,13 @@ const Subscriptions = () => {
       <Header />
       <SubscriptionsWrapper>
         <h2>
-          <Link to="/logged/user/subscriptions">Subscribers</Link>
+          <Link subscribers to="/logged/user/subscriptions">
+            Subscribers
+          </Link>
           {' / '}
-          <Link to="/logged/user/subscribed">Subscribed To</Link>{' '}
+          <Link id="subscribed" to="/logged/user/subscribed">
+            Subscribed To
+          </Link>{' '}
         </h2>
         <Subscribers />
       </SubscriptionsWrapper>

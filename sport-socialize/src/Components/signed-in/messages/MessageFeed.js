@@ -6,8 +6,8 @@ const MessagesFeedWraper = styled.div`
   .post {
     margin: 5px;
     padding: 10px;
-    border: 7px solid #172a08;
-    border-radius: 15px;
+    border: 4px solid #81b622;
+    border-radius: 5px;
     width: 75%;
   }
   .user-pic {
@@ -15,8 +15,8 @@ const MessagesFeedWraper = styled.div`
   }
   .user-info {
     background: #e1f9cd;
-    border: 7px solid #172a08;
-    border-radius: 15px;
+    border: 4px solid #81b622;
+    border-radius: 5px;
     padding: 5px;
     margin-bottom: 10px;
   }
