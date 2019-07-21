@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const PhotosWrapper = styled.div`
   display: inline-block;
   margin: 10px;
-  border: 7px solid #172a08;
+  border: 4px solid #81b622;
   border-radius: 5px;
 `;
 

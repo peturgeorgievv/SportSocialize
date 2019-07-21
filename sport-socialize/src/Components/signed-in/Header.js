@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
-  background-color: #172a08;
+  background-color: #4169E1;
   img {
     margin: 20px;
   }
@@ -20,16 +20,22 @@ const Wrapper = styled.div`
   #profile-name-link {
     position: absolute;
     width: 70%;
-    margin: 20px 0px 0px 150px;
+    margin: 20px 0px 0px 120px;
     font-size: xx-large;
     float: left;
     /* right: ${props => (props.isScrollAvailable ? 540 : 550)}; */
   }
   #profile-name {
     width: 100%;
-    height: 96px;
-    padding: 25px;
+    height: 76px;
+    padding: 5px;
     text-align: left;
+    opacity: 0.9;
+    font-weight: bold;
+    background-color: #4169E1;
+  }
+  #profile-name:hover {
+    opacity:1;
   }
   .button-menu {
     display: grid;
@@ -46,10 +52,10 @@ const Button = styled.button`
   font-size: small;
   width: 110px;
   color: white;
-  background-color: #234806;
+  background-color: #116530;
   border-radius: 10px;
   :hover {
-    background-color: green;
+    background-color: #00a300;
   }
 `;
 
@@ -74,8 +80,8 @@ const Header = () => {
         <Link to="/logged/messages">
           <Button>Chat</Button>
         </Link>
-        <Link to="/logged/friends">
-          <Button>Friends</Button>
+        <Link to="/logged/user/subscriptions">
+          <Button>Subscriptions</Button>
         </Link>
         <Link to="/logged/search">
           <Button>Search</Button>

@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 2fr 1fr 3fr;
   width: 100%;
-  background-color: #172a08;
+  background-color: #4169e1;
   h2 {
     width: 17%;
     margin: 5px 10px 15px 10px;
@@ -33,9 +33,11 @@ const Button = styled.button`
   background-color: #234806;
   margin: 10px 10px 10px 10px;
   padding: 10px 20px 10px 20px;
+  color: white;
+  background-color: #116530;
   border-radius: 10px;
   :hover {
-    background-color: green;
+    background-color: #00a300;
   }
 `;
 

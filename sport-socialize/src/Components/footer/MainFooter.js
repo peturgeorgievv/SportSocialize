@@ -4,17 +4,19 @@ import Terms from './Terms';
 import styled from 'styled-components';
 
 const FooterWrapper = styled.div`
-  width: 100%;
-  overflow: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 15px;
+  padding: 5px;
+  border: 4px solid #81b622;
+  border-radius: 5px;
 `;
 
 const MainFooter = () => {
   return (
     <FooterWrapper>
-      <div>
-        <Contacts />
-        <Terms />
-      </div>
+      <Contacts />
+      <Terms />
     </FooterWrapper>
   );
 };

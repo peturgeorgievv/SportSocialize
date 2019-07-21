@@ -2,19 +2,26 @@ import React from 'react';
 import styled from 'styled-components';
 
 const PersonalInfoWrapper = styled.div`
-  width: 20%;
-  margin: 10px;
-  border: 7px solid #172a08;
-  border-radius: 5px;
-  float: left;
+  margin: 5px;
+
+  grid-column: 2;
 `;
 
 const PersonalInfo = () => {
   return (
     <PersonalInfoWrapper>
       <div>
-        Here will be some information about you <br />I am striving to become a
-        Professional Athlete... etc
+        <h4>Proffesional Fitness-Trainer</h4>
+        <ul>
+          <li>Finished university for dieting</li>
+          <li>Certificate about suplementing</li>
+          <li>Certificate about suplementing</li>
+          <li>Certificate about suplementing</li>
+          <li>Certificate about suplementing</li>
+          <li>Certificate about suplementing</li>
+          <li>Certificate about suplementing</li>
+          <li>Certificate about suplementing</li>
+        </ul>
       </div>
     </PersonalInfoWrapper>
   );

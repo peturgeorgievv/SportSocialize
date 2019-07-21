@@ -11,11 +11,11 @@ const MediaWrapper = styled.div`
     font-weight: bold;
     width: 100px;
     color: white;
-    background-color: #234806;
     margin: 5px;
+    background-color: #116530;
     border-radius: 10px;
     :hover {
-      background-color: green;
+      background-color: #00a300;
     }
     #videos {
       grid-column: 1;
