@@ -6,10 +6,11 @@ import styled from 'styled-components';
 const MediaWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin: 10px;
   button {
     float: right;
     font-weight: bold;
-    width: 100px;
+    width: 15%;
     color: white;
     margin: 5px;
     background-color: #116530;

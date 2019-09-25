@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns:1fr 1fr 10fr 1fr;
   width: 100%;
   background-color: #4169E1;
   img {
@@ -12,15 +12,23 @@ const Wrapper = styled.div`
   }
   #profile-cover {
     margin: 5px;
-    padding-right: 25px;
+    padding: 15px 15px 0px 0px;
+    grid-column: 3;
+    grid-row:1;
   }
   #profile-pic {
-    position: absolute;
+    grid-column: 2;
+    grid-row:1;
+    border-radius: 15px;
+    border: 2px solid #e8eef1;
+    margin: 15px 0px 15px 15px;
   }
   #profile-name-link {
-    position: absolute;
-    width: 70%;
-    margin: 20px 0px 0px 120px;
+    grid-row:1;
+    grid-column: 3;
+    padding: 15px;
+    width: 50%;
+    margin: 15px;
     font-size: xx-large;
     float: left;
     /* right: ${props => (props.isScrollAvailable ? 540 : 550)}; */
@@ -31,15 +39,22 @@ const Wrapper = styled.div`
     padding: 5px;
     text-align: left;
     opacity: 0.9;
+    position: relative;
     font-weight: bold;
     background-color: #4169E1;
   }
   #profile-name:hover {
     opacity:1;
   }
+  #logo {
+    grid-column:1;
+    margin: 15px 0px 15px 15px;
+    border: 2px solid #e8eef1;
+    border-radius: 15px;
+  }
   .button-menu {
     display: grid;
-    grid-column: 2;
+    grid-column: 4;
   }
 `;
 
@@ -63,6 +78,9 @@ const Header = () => {
   const user = 'Petar Georgiev Georgiev';
   return (
     <Wrapper>
+      <Link to="/logged">
+        <img id="logo" src={require('../landing/imgs/logo.jpg')} alt="logo" />
+      </Link>
       <img
         id="profile-pic"
         src={require('./imgs/profile-pic.jpg')}

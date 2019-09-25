@@ -30,6 +30,12 @@ const MessagesFeedWraper = styled.div`
 `;
 
 const MessageFeed = () => {
+  const userName1 = 'Petar Georgiev Georgiev';
+  const userName2 = 'Petar Georgiev Georgiev';
+  const userName3 = 'Petar Georgiev Georgiev';
+  const chatMessage1 = 'Messaging this guy';
+  const chatMessage2 = 'Well this is some msg...';
+  const chatMessage3 = 'Well this is some msg...';
   return (
     <MessagesFeedWraper>
       <div>
@@ -40,9 +46,9 @@ const MessageFeed = () => {
               src={require('../imgs/profil-pic-post.jpg')}
               alt="profile-pic-user"
             />
-            <h3>Petar Georgiev Georgiev</h3>
+            <h3>{userName1}</h3>
           </div>
-          <h4>Messaging this guy</h4>
+          <h4>{chatMessage1}</h4>
         </div>
         <div className="post">
           <div className="user-info">
@@ -51,9 +57,9 @@ const MessageFeed = () => {
               src={require('../imgs/profil-pic-post.jpg')}
               alt="profile-pic-user"
             />
-            <h3>Some Guy</h3>
+            <h3>{userName2}</h3>
           </div>
-          <h4>Well this is some msg...</h4>
+          <h4>{chatMessage2}</h4>
         </div>
         <div className="post">
           <div className="user-info">
@@ -62,9 +68,9 @@ const MessageFeed = () => {
               src={require('../imgs/profil-pic-post.jpg')}
               alt="profile-pic-user"
             />
-            <h3>Angry Guy Ivanov</h3>
+            <h3>{userName3}</h3>
           </div>
-          <h4>This guy stole my Profile Picture</h4>
+          <h4>{chatMessage3}</h4>
         </div>
       </div>
     </MessagesFeedWraper>
