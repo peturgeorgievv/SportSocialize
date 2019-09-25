@@ -3,7 +3,8 @@ import Header from './Header';
 import styled from 'styled-components';
 
 const LogInWrapper = styled.div`
-   {
+  body 
+  {
     box-sizing: border-box;
   }
 
@@ -103,7 +104,7 @@ const LogInWrapper = styled.div`
       margin-top: 120px;
     }
   }
-`;
+`
 
 const Login = () => {
   return (
