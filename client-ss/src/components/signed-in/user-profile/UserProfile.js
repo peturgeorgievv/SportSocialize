@@ -12,18 +12,21 @@ const UserFeed = styled.div`
   margin: 15px;
 `;
 
-const UserProfile = () => {
-  return (
-    <div>
-      <Header />
-      <Media />
-      <UserFeed>
-        <PersonalMedia />
-        <PersonalInfo />
-        <SideMenu />
-      </UserFeed>
-    </div>
-  );
+class UserProfile extends React.Component {
+
+  render() {
+    return (
+      <div>
+        <Header />
+        <Media />
+        <UserFeed>
+          <PersonalMedia />
+          <PersonalInfo />
+          <SideMenu />
+        </UserFeed>
+      </div>
+    );
+  }
 };
 
 export default UserProfile;

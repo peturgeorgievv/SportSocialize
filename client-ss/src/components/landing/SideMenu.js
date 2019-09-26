@@ -35,23 +35,23 @@ const SideMenu = () => {
   return (
     <Accordion>
       <div>
-        <button class="accordion">First reason</button>
-        <div class="panel">
+        <button className="accordion">First reason</button>
+        <div className="panel">
           <p>First reason</p>
         </div>
 
-        <button class="accordion">Second Reason</button>
-        <div class="panel">
+        <button className="accordion">Second Reason</button>
+        <div className="panel">
           <p>Second Reason</p>
         </div>
 
-        <button class="accordion">Third Reason</button>
-        <div class="panel">
+        <button className="accordion">Third Reason</button>
+        <div className="panel">
           <p>Third Reason</p>
         </div>
 
-        <button class="accordion">4 Reason</button>
-        <div class="panel">
+        <button className="accordion">4 Reason</button>
+        <div className="panel">
           <p>Fourth Reason</p>
         </div>
       </div>

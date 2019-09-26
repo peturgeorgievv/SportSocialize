@@ -9,10 +9,9 @@ export class UsersService {
 
     public constructor(@InjectRepository(Users) private readonly usersRepository: Repository<Users>) {}
 
-    async oneUser(username) {
+    async oneUser(userId) {
 
-        return 'wtf';
-        // return await this.usersRepository.findOne({username});
+        return await this.usersRepository.findOne(userId);
     }
 
     async registerUser(dto) {

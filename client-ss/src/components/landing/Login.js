@@ -114,13 +114,13 @@ const Login = () => {
         <form>
           <div class="row">
             <div class="col first-col">
-              <a href="#" class="fb btn">
+              <a href="fixLater" class="fb btn">
                 <i class="fa fa-facebook fa-fw" /> Login with Facebook
               </a>
-              <a href="#" class="twitter btn">
+              <a href="fixLATER" class="twitter btn">
                 <i class="fa fa-twitter fa-fw" /> Login with Twitter
               </a>
-              <a href="#" class="google btn">
+              <a href="fixLAter" class="google btn">
                 <i class="fa fa-google fa-fw" /> Login with Google+
               </a>
             </div>

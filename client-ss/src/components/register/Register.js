@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from '../landing/Header';
 import styled from 'styled-components';
-import axios from 'axios'; 
 import $http from '../../api/users';
 
 const Form = styled.div`
@@ -56,8 +55,6 @@ onAccountTypeChange = event => {
 };
 
   onFormSubmit = event => {
-    event.preventDefault();
-    console.log(this.state);
     $http.post('/api/users', {
       username: this.state.username,
         firstName: this.state.firstName,
@@ -152,8 +149,8 @@ onAccountTypeChange = event => {
                 <b>Activity (Sport) </b>
               </label>
               <br />
-              <select name="activity-sport">
-                <option value={this.state.activity} onChange={this.onActivityChange}>Boxing</option>
+              <select name="activity-sport" onChange={this.onActivityChange}>
+                <option value="Boxing">Boxing</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
@@ -164,8 +161,8 @@ onAccountTypeChange = event => {
                 <b>Type of Account</b>
               </label>
               <br />
-              <select name="account-type">
-                <option value={this.state.accountType} onChange={this.onAccountTypeChange}>Manager</option>
+              <select name="account-type" onChange={this.onAccountTypeChange}>
+                <option value="Manager">Manager</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>

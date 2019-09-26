@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import $http from '../../api/users';
 
 const Wrapper = styled.div`
   display: grid;
@@ -74,8 +75,15 @@ const Button = styled.button`
   }
 `;
 
-const Header = () => {
-  const user = 'Petar Georgiev Georgiev';
+class Header extends React.Component {
+  state = { data: [] };
+
+  async componentDidMount() {
+    const response = await $http.get('/api/users/94c583ae-9c90-4b5e-b139-b3dcb3f85d2d')
+    this.setState({ data: `${response.data.firstName} ${response.data.lastName}` });
+  }
+
+  render() {
   return (
     <Wrapper>
       <Link to="/logged">
@@ -87,7 +95,7 @@ const Header = () => {
         alt="profile-pic"
       />
       <Link id="profile-name-link" to="/logged/user">
-        <button id="profile-name">{user}</button>
+        <button id="profile-name">{this.state.data}</button>
       </Link>
       <img
         id="profile-cover"
@@ -114,5 +122,6 @@ const Header = () => {
     </Wrapper>
   );
 };
+}
 
 export default Header;

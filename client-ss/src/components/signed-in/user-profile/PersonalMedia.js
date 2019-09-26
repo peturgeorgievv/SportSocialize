@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import $http from '../../../api/users';
 
 const PersonalMediaWrapper = styled.div`
   margin: 10px;
@@ -63,7 +64,17 @@ const PersonalMediaWrapper = styled.div`
   }
 `;
 
-const PersonalMedia = () => {
+class PersonalMedia extends React.Component {
+  state = { data: [] };
+
+  async componentDidMount() {
+    const response = await $http.get('/api/users/94c583ae-9c90-4b5e-b139-b3dcb3f85d2d')
+    this.setState({ data: response.data });
+    console.log(this.state.data);
+  }
+  
+  render() {
+
   return (
     <div>
       <PersonalMediaWrapper>
@@ -75,8 +86,11 @@ const PersonalMedia = () => {
                 src={require('../imgs/profil-pic-post.jpg')}
                 alt="profile-pic-user"
               />
-              <Link className="profile-link" to="/logged/user">
-                Petar Georgiev Georgiev
+              <Link 
+                className="profile-link"  
+                to="/logged/user"
+              >
+                {this.state.data.firstName} {this.state.data.lastName}
               </Link>
             </div>
             <form>
@@ -98,7 +112,7 @@ const PersonalMedia = () => {
                   alt="profile-pic-user"
                 />
                 <Link className="profile-link" to="/logged/user">
-                  Petar Georgiev Georgiev
+                {this.state.data.firstName} {this.state.data.lastName}
                 </Link>
               </div>
               <h5>Post: Mike Tyson fighting</h5>
@@ -115,7 +129,7 @@ const PersonalMedia = () => {
                   alt="profile-pic-user"
                 />
                 <Link className="profile-link" to="/logged/user">
-                  Petar Georgiev Georgiev
+                {this.state.data.firstName} {this.state.data.lastName}
                 </Link>
               </div>
               <h5>Post: Mike Tyson fighting</h5>
@@ -132,7 +146,7 @@ const PersonalMedia = () => {
                   alt="profile-pic-user"
                 />
                 <Link className="profile-link" to="/logged/user">
-                  Petar Georgiev Georgiev
+                {this.state.data.firstName} {this.state.data.lastName}
                 </Link>
               </div>
               <h5>Post: Mike Tyson fighting</h5>
@@ -143,6 +157,7 @@ const PersonalMedia = () => {
       </PersonalMediaWrapper>
     </div>
   );
-};
+  };
+}
 
 export default PersonalMedia;
