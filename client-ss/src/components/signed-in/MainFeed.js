@@ -1,40 +1,40 @@
 import React from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 // Have to change user-pic class to unique ID of the user
-const MainFeedWrapper = styled.div`
-  display: block;
-  .post {
-    margin: 5px;
-    padding: 10px;
-    border: 4px solid #81b622;
-    border-radius: 5px;
-    width: 75%;
-  }
-  .user-pic {
-    border-radius: 100%;
-  }
-  .user-info {
-    padding: 5px;
-    margin-bottom: 10px;
-  }
 
-  .profile-link {
-    display: inline;
-    margin: 5px;
-    padding: 15px;
-    font-weight: bold;
-    font-size: x-large;
-    color: black;
-  }
-  .profile-link:hover {
-    color: #4169e1;
-  }
-`;
+// const MainFeedWrapper = styled.div`
+//   display: block;
+//   .post {
+//     margin: 5px;
+//     padding: 10px;
+//     border: 4px solid #81b622;
+//     border-radius: 5px;
+//     width: 75%;
+//   }
+//   .user-pic {
+//     border-radius: 100%;
+//   }
+//   .user-info {
+//     padding: 5px;
+//     margin-bottom: 10px;
+//   }
+
+//   .profile-link {
+//     display: inline;
+//     margin: 5px;
+//     padding: 15px;
+//     font-weight: bold;
+//     font-size: x-large;
+//     color: black;
+//   }
+//   .profile-link:hover {
+//     color: #4169e1;
+//   }
+// `;
 
 const MainFeed = () => {
   return (
-    <MainFeedWrapper>
       <div>
         <div className="post">
           <div className="user-info">
@@ -79,7 +79,6 @@ const MainFeed = () => {
           <img src={require('./imgs/TysonFury.jpg')} alt="Fury" />
         </div>
       </div>
-    </MainFeedWrapper>
   );
 };
 

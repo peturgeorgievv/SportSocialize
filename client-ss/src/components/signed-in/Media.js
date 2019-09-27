@@ -3,36 +3,38 @@ import Videos from './Videos';
 import Photos from './Photos';
 import styled from 'styled-components';
 
-const MediaWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin: 10px;
-  button {
-    float: right;
-    font-weight: bold;
-    width: 15%;
-    color: white;
-    margin: 5px;
-    background-color: #116530;
-    border-radius: 10px;
-    :hover {
-      background-color: #00a300;
-    }
-    #videos {
-      grid-column: 1;
-    }
-    #photos {
-      grid-column: 2;
-    }
-  }
-`;
+// const MediaWrapper = styled.div`
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+//   margin: 10px;
+//   button {
+//     float: right;
+//     font-weight: bold;
+//     width: 15%;
+//     color: white;
+//     margin: 5px;
+//     background-color: #116530;
+//     border-radius: 10px;
+//     :hover {
+//       background-color: #00a300;
+//     }
+//     #videos {
+//       grid-column: 1;
+//     }
+//     #photos {
+//       grid-column: 2;
+//     }
+//   }
+// `;
 
 const Media = () => {
   return (
-    <MediaWrapper>
+    // <MediaWrapper>
+    <div>
       <Videos id="videos" />
       <Photos id="photos" />
-    </MediaWrapper>
+    </div>
+    // </MediaWrapper>
   );
 };
 
