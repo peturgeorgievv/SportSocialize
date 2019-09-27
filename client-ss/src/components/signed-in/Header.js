@@ -12,7 +12,7 @@ class Header extends React.Component {
         
   render() {
   return (
-    <div>
+    <div className="col s12">
       <ul id="dropdown1" className="dropdown-content">
         <li><a href="#!">one</a></li>
         <li><a href="#!">two</a></li>
@@ -20,7 +20,7 @@ class Header extends React.Component {
         <li><a href="#!">three</a></li>
       </ul>
       <nav>
-        <div className="nav-wrapper">
+        <div className="nav-wrapper blue">
           <Link  className="brand-logo" to="/">
             <img
                 className="responsive-img circle"
@@ -33,7 +33,7 @@ class Header extends React.Component {
           <ul className="right hide-on-med-and-down">
           <li>          
            <Link id="profile-name-link" to="/logged/user">
-         <button className="btn-large" id="profile-name">{this.props.firstName}(Petar Georgiev) {this.props.lastName}</button>
+         <button className="btn-large green" id="profile-name">{this.props.firstName}(Petar Georgiev) {this.props.lastName}</button>
          </Link>
           </li>
             <li><div className="nav-wrapper">

@@ -1,25 +1,19 @@
 import React from 'react';
-// import styled from 'styled-components';
-
-// const VideosWrapper = styled.div`
-//   margin: 10px;
-//   display: inline-block;
-//   border: 4px solid #81b622;
-//   border-radius: 5px;
-//   #all-videos {
-//     float: left;
-//     width: 80%;
-//   }
-// `;
 
 const Videos = () => {
   return (
-    // <VideosWrapper>
-      <div>
-        <button id="all-videos">All Videos</button>
-        <button>Category</button>
+      <div className="col s6 center">
+        <a class="btn-large" href="#!">All Videos</a>
+        <ul id="dropdown1" class="dropdown-content">
+              <li><a href="#!">one</a></li>
+              <li><a href="#!">two</a></li>
+              <li className="divider"></li>
+              <li><a href="#!">three</a></li>
+          </ul>
+        <ul class="right hide-on-med-and-down">
+          <li><a className="dropdown-trigger btn-large" href="#!" data-target="dropdown1">Category<i className="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
       </div>
-    // </VideosWrapper>
   );
 };
 
