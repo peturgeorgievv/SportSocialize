@@ -8,7 +8,7 @@ import SignedIn from '../components/signed-in/SignedIn';
 import Messages from '../components/signed-in/messages/Messages';
 import UserProfile from '../components/signed-in/user-profile/UserProfile';
 import styled from 'styled-components';
-import MainFooter from './footer/MainFooter';
+import MainFooter from './MainFooter';
 import Settings from './signed-in/settings/Settings';
 import Search from './signed-in/search/Search';
 import Subscriptions from './signed-in/subscribe/Subscriptions';

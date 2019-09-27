@@ -1,15 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
-const PersonalInfoWrapper = styled.div`
-  margin: 5px;
+// const PersonalInfoWrapper = styled.div`
+//   margin: 5px;
 
-  grid-column: 2;
-`;
+//   grid-column: 2;
+// `;
 
 const PersonalInfo = () => {
   return (
-    <PersonalInfoWrapper>
+    <div>
+    <div className="col s12">
       <div>
         <h4>Proffesional Fitness-Trainer</h4>
         <ul>
@@ -23,7 +24,8 @@ const PersonalInfo = () => {
           <li>Certificate about suplementing</li>
         </ul>
       </div>
-    </PersonalInfoWrapper>
+    </div>
+    </div>
   );
 };
 

@@ -1,68 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import $http from '../../../api/users';
+import M from "materialize-css";
 
-const PersonalMediaWrapper = styled.div`
-  margin: 10px;
-  border: 4px solid #81b622;
-  border-radius: 5px;
-  grid-column: 1;
-  grid-row: 2;
-  ul {
-    list-style-type: none;
-    padding: 0px;
-  }
+//   border: 4px solid #81b622;
+//     border-bottom: 4px solid #81b622;
+//     background: #e1f9cd;
+//     color: #4169e1;
+//     background-color: #116530;
+//       background-color: #00a300;
 
-  .post {
-    margin: 25px 10px 25px 10px;
-    padding: 10px;
-    border-bottom: 4px solid #81b622;
-  }
-  .user-pic {
-    border-radius: 100%;
-  }
-  .user-info {
-    background: #e1f9cd;
-    padding: 5px;
-    margin-bottom: 10px;
-  }
-
-  .profile-link {
-    display: inline;
-    margin: 5px;
-    padding: 15px;
-    font-weight: bold;
-    font-size: x-large;
-    color: black;
-  }
-  .profile-link:hover {
-    color: #4169e1;
-  }
-
-  #add-post {
-    grid-row: 1;
-    grid-column: 1;
-  }
-  textarea {
-    width: 560px;
-    height: 110px;
-    border: 3px solid #cccccc;
-    padding: 5px;
-    resize: none;
-  }
-  button {
-    display: inline-block;
-    font-weight: bold;
-    width: 50%;
-    color: white;
-    background-color: #116530;
-    border-radius: 10px;
-    :hover {
-      background-color: #00a300;
-    }
-  }
-`;
 
 class PersonalMedia extends React.Component {
   state = { data: [] };
@@ -71,90 +18,111 @@ class PersonalMedia extends React.Component {
     const response = await $http.get('/api/users/94c583ae-9c90-4b5e-b139-b3dcb3f85d2d')
     this.setState({ data: response.data });
     console.log(this.state.data);
+
+      // Auto initialize all the things!
+      M.AutoInit();
   }
   
   render() {
 
   return (
     <div>
-      <PersonalMediaWrapper>
-        <div id="add-post">
-          <div className="post">
-            <div className="user-info">
-              <img
-                className="user-pic"
-                src={require('../imgs/profil-pic-post.jpg')}
-                alt="profile-pic-user"
-              />
-              <Link 
-                className="profile-link"  
-                to="/logged/user"
-              >
-                {this.state.data.firstName} {this.state.data.lastName}
-              </Link>
-            </div>
-            <form>
-              <h3>What do you think?</h3>
-              <textarea />
-              <button>Post</button>
-              <button>Add Media</button>
-            </form>
+      <div className="col s12">
+        <div>
+            <div className="card horizontal">
+              <div className="card-stacked">
+                <div className="card-content">
+                  <div class="row">
+                    <form class="col s12">
+                        <div class="input-field col s12">
+                          <textarea id="textarea1" class="materialize-textarea"></textarea>
+                          <label for="textarea1">Textarea</label>
+
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div className="card-action">
+                <button className="btn-large blue" id="profile-name">ADD POST</button>
+                  <form action="#">
+                    <div class="file-field input-field">
+                      <div class="btn-large blue">
+                        <span>Add Media</span>
+                        <input type="file" />
+                      </div>
+                      <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text" />
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+          </div>
+      </div>
+    
+
+      <div>
+        <div>
+            <div className="card horizontal">
+              <div className="card-image">
+              <img src={require('../imgs/dietFood.jpg')} alt="MikeTyson" />
+              </div>
+              <div className="card-stacked">
+                <div className="card-content">
+                  <p>I am a very simple card. I am good at containing small bits of information.</p>
+                </div>
+                <div className="card-action">
+                <Link className="profile-link blue-text" to="/logged/user">
+                {this.state.data.firstName} Here will be name{this.state.data.lastName}
+                    </Link>
+                </div>
+              </div>
           </div>
         </div>
+      </div>
 
-        <ul>
-          <li>
-            <div className="post">
-              <div className="user-info">
-                <img
-                  className="user-pic"
-                  src={require('../imgs/profil-pic-post.jpg')}
-                  alt="profile-pic-user"
-                />
-                <Link className="profile-link" to="/logged/user">
-                {this.state.data.firstName} {this.state.data.lastName}
-                </Link>
-              </div>
-              <h5>Post: Mike Tyson fighting</h5>
+      
+      <div>
+        <div>
+            <div className="card horizontal">
+              <div className="card-image">
               <img src={require('../imgs/dietFood.jpg')} alt="MikeTyson" />
-            </div>
-          </li>
+              </div>
+              <div className="card-stacked">
+                <div className="card-content">
+                  <p>Mike Tyson fighting</p>
+                </div>
+                <div className="card-action">
+                <Link className="profile-link blue-text" to="/logged/user">
+                {this.state.data.firstName} Here will be name{this.state.data.lastName}
+                    </Link>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
 
-          <li>
-            <div className="post">
-              <div className="user-info">
-                <img
-                  className="user-pic"
-                  src={require('../imgs/profil-pic-post.jpg')}
-                  alt="profile-pic-user"
-                />
-                <Link className="profile-link" to="/logged/user">
-                {this.state.data.firstName} {this.state.data.lastName}
-                </Link>
-              </div>
-              <h5>Post: Mike Tyson fighting</h5>
+      <div>
+        <div>
+            <div className="card horizontal">
+              <div className="card-image">
               <img src={require('../imgs/dietFood.jpg')} alt="MikeTyson" />
-            </div>
-          </li>
+              </div>
+              <div className="card-stacked">
+                <div className="card-content">
+                  <p>Mike Tyson fighting</p>
+                </div>
+                <div className="card-action">
+                <Link className="profile-link blue-text" to="/logged/user">
+                {this.state.data.firstName} Here will be name{this.state.data.lastName}
+                    </Link>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
 
-          <li>
-            <div className="post">
-              <div className="user-info">
-                <img
-                  className="user-pic"
-                  src={require('../imgs/profil-pic-post.jpg')}
-                  alt="profile-pic-user"
-                />
-                <Link className="profile-link" to="/logged/user">
-                {this.state.data.firstName} {this.state.data.lastName}
-                </Link>
-              </div>
-              <h5>Post: Mike Tyson fighting</h5>
-              <img src={require('../imgs/dietFood.jpg')} alt="MikeTyson" />
-            </div>
-          </li>
-        </ul>
-      </PersonalMediaWrapper>
+      </div>
     </div>
   );
   };

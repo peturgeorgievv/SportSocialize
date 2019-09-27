@@ -4,14 +4,14 @@ import Media from '../Media';
 import PersonalInfo from './PersonalInfo';
 import PersonalMedia from './PersonalMedia';
 import SideMenu from './SideMenu';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import $http from '../../../api/users';
 
-const UserFeed = styled.div`
-  display: grid;
-  grid-template-columns: 4fr 2fr 1fr;
-  margin: 15px;
-`;
+// const UserFeed = styled.div`
+//   display: grid;
+//   grid-template-columns: 4fr 2fr 1fr;
+//   margin: 15px;
+// `;
 
 class UserProfile extends React.Component {
   state = { data: [] };
@@ -29,11 +29,11 @@ class UserProfile extends React.Component {
           lastName={this.state.data.lastName}
         />
         <Media />
-        <UserFeed>
+        <div className="row">
           <PersonalMedia />
           <PersonalInfo />
           <SideMenu />
-        </UserFeed>
+        </div>
       </div>
     );
   }

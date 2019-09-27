@@ -1,14 +1,8 @@
 import React from 'react';
 import Header from '../landing/Header';
-import styled from 'styled-components';
 import $http from '../../api/users';
+import M from "materialize-css";
 
-const Form = styled.div`
-  padding-left: 15px;
-  input {
-    display: block;
-  }
-`;
 
 class Register extends React.Component {
   state = { 
@@ -21,6 +15,11 @@ class Register extends React.Component {
     activity: "Boxing",
     accountType: "Manager",
  };
+
+ componentDidMount() {
+  // Auto initialize all the things!
+  M.AutoInit();
+}
 
  onUsernameChange = event => {
   this.setState({ username: event.target.value });
@@ -74,8 +73,7 @@ onAccountTypeChange = event => {
     return (
       <div>
         <Header />
-        <Form>
-          <form onSubmit={this.onFormSubmit}>
+          <form onSubmit={this.onFormSubmit} className="container">
             <div>
               <h1>Register</h1>
               <p>Please fill in this form to create an account.</p>
@@ -170,20 +168,19 @@ onAccountTypeChange = event => {
 
               <p>
                 By creating an account you agree to our{' '}
-                <a href="#">Terms & Privacy</a>.
+                <a href="#!">Terms & Privacy</a>.
               </p>
-              <button type="submit" className="registerbtn">
+              <button type="submit" className="btn-small">
                 Register
               </button>
             </div>
 
             <div>
               <p>
-                Already have an account? <a href="#">Sign in</a>.
+                Already have an account? <a href="#!">Sign in</a>.
               </p>
             </div>
           </form>
-        </Form>
       </div>
     );
   }

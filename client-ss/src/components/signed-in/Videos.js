@@ -3,7 +3,7 @@ import React from 'react';
 const Videos = () => {
   return (
       <div className="col s6 center">
-        <a class="btn-large" href="#!">All Videos</a>
+        <a class="btn-large blue" href="#!">All Videos</a>
         <ul id="dropdown1" class="dropdown-content">
               <li><a href="#!">one</a></li>
               <li><a href="#!">two</a></li>
@@ -11,7 +11,7 @@ const Videos = () => {
               <li><a href="#!">three</a></li>
           </ul>
         <ul class="right hide-on-med-and-down">
-          <li><a className="dropdown-trigger btn-large" href="#!" data-target="dropdown1">Category<i className="material-icons right">arrow_drop_down</i></a></li>
+          <li><a className="dropdown-trigger btn-large blue" href="#!" data-target="dropdown1">Category<i className="material-icons right">arrow_drop_down</i></a></li>
         </ul>
       </div>
   );
