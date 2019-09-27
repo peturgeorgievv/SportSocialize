@@ -1,32 +1,28 @@
 import React from 'react';
-// import styled from 'styled-components';
+import M from "materialize-css";
+class PersonalInfo extends React.Component {
+  componentDidMount() {
+      // Auto initialize all the things!
+      M.AutoInit();
+  }
+  render() {
 
-// const PersonalInfoWrapper = styled.div`
-//   margin: 5px;
-
-//   grid-column: 2;
-// `;
-
-const PersonalInfo = () => {
-  return (
-    <div>
-    <div className="col s12">
-      <div>
-        <h4>Proffesional Fitness-Trainer</h4>
-        <ul>
-          <li>Finished university for dieting</li>
-          <li>Certificate about suplementing</li>
-          <li>Certificate about suplementing</li>
-          <li>Certificate about suplementing</li>
-          <li>Certificate about suplementing</li>
-          <li>Certificate about suplementing</li>
-          <li>Certificate about suplementing</li>
-          <li>Certificate about suplementing</li>
+    return (
+      <div className="col s12">
+      <ul class="collection with-header">
+          <li class="collection-header"><h4>Proffesional Fitness-Trainer</h4></li>
+          <li class="collection-item">Certificate about suplementing</li>
+          <li class="collection-item">Certificate about suplementing</li>
+          <li class="collection-item">Certificate about suplementing</li>
+          <li class="collection-item">Certificate about suplementing</li>
+          <li class="collection-item">Certificate about suplementing</li>
+          <li class="collection-item">Certificate about suplementing</li>
+          <li class="collection-item">Certificate about suplementing</li>
+          <li class="collection-item">Certificate about suplementing</li>
         </ul>
       </div>
-    </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default PersonalInfo;

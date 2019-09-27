@@ -26,7 +26,6 @@ class PersonalMedia extends React.Component {
   render() {
 
   return (
-    <div>
       <div className="col s12">
         <div>
             <div className="card horizontal">
@@ -121,9 +120,9 @@ class PersonalMedia extends React.Component {
           </div>
         </div>
       </div>
+</div>
 
-      </div>
-    </div>
+    
   );
   };
 }
