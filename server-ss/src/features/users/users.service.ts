@@ -6,35 +6,58 @@ import { validate } from 'class-validator';
 
 @Injectable()
 export class UsersService {
+  public constructor(
+    @InjectRepository(Users)
+    private readonly usersRepository: Repository<Users>,
+  ) {}
 
-    public constructor(@InjectRepository(Users) private readonly usersRepository: Repository<Users>) {}
+  async oneUser(username: string) {
+    return await this.usersRepository.findOne({ username });
+  }
 
-    async oneUser(userId) {
+  async registerUser(dto) {
+    const {
+      username,
+      firstName,
+      lastName,
+      activity,
+      accountType,
+      email,
+      password,
+    } = dto;
 
-        return await this.usersRepository.findOne(userId);
+    const user: Users = await this.usersRepository.findOne({ username, email });
+    if (user) {
+      const userErrors = { username: 'Username and email must be unique!' };
+      throw new HttpException(
+        { msg: 'Input Data Validation FAILED!', userErrors },
+        HttpStatus.BAD_REQUEST,
+      );
     }
 
-    async registerUser(dto) {
-        const {username, firstName, lastName, activity, accountType, email, password} = dto;
+    // Creating new User
+    const newUser: Users = this.usersRepository.create({
+      username,
+      firstName,
+      lastName,
+      activity,
+      accountType,
+      email,
+      password,
+    });
 
-        const user: Users = await this.usersRepository.findOne({username, email});
-        if (user) {
-            const userErrors = {username: 'Username and email must be unique!'};
-            throw new HttpException({msg: 'Input Data Validation FAILED!', userErrors}, HttpStatus.BAD_REQUEST);
-        }
+    // Validate from UserEntity DECORATORS !!!
+    const errors = await validate(newUser);
 
-        // Creating new User
-        const newUser: Users = this.usersRepository.create({username, firstName, lastName, activity, accountType, email, password});
-
-        // Validate from UserEntity DECORATORS !!!
-        const errors = await validate(newUser);
-
-        if (errors.length > 0) {
-            const _errors = { username: 'User Input is NOT Valid!'};
-            throw new HttpException({msg: 'Input Data Validation FAILED!', _errors}, HttpStatus.BAD_REQUEST);
-        } else {
-            const savedUser = await this.usersRepository.save(newUser);
-            return savedUser;
-        }
+    if (errors.length > 0) {
+      const _errors = { username: 'User Input is NOT Valid!' };
+      throw new HttpException(
+        { msg: 'Input Data Validation FAILED!', _errors },
+        HttpStatus.BAD_REQUEST,
+      );
+    } else {
+      const savedUser = await this.usersRepository.save(newUser);
+      return savedUser;
     }
+  }
 }
