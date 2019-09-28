@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './Header';
+import Header from '../signed-in/Header';
 import Video from './Video';
 import SideMenu from './SideMenu';
 

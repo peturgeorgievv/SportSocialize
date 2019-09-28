@@ -56,6 +56,9 @@ const Header = () => {
         <Link to="/logged">
           <Button>Sign In</Button>
         </Link>
+        <Link to="/login">
+          <Button>Login</Button>
+        </Link>
       </div>
     </Wrapper>
   );

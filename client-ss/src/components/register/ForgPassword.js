@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../landing/Header';
+import Header from '../signed-in/Header';
 
 const ForgPassword = () => {
   return (

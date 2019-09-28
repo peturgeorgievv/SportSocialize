@@ -1,7 +1,6 @@
 import React from 'react';
-import Header from '../landing/Header';
+import Header from '../signed-in/Header';
 import $http from '../../api/users';
-import M from "materialize-css";
 
 
 class Register extends React.Component {
@@ -15,11 +14,6 @@ class Register extends React.Component {
     activity: "Boxing",
     accountType: "Manager",
   };
-
-  componentDidMount() {
-    // Auto initialize all the things!
-    M.AutoInit();
-  }
 
   onUsernameChange = event => {
     this.setState({ username: event.target.value });

@@ -6,20 +6,16 @@ import Photos from './Photos';
 const Media = () => {
   return (
     <div>
-    <ul class="nav nav-pills nav-justified">
-  <li class="nav-item">
-  <a class="nav-link" href="#!">
-    <Videos id="videos"/>
-    </a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#!">
-      <Photos id="photos" className="nav-link"/>
-    </a>
-  </li>
-</ul>
+      <ul className="nav nav-pills nav-justified">
+        <li className="nav-item nav-link">
+          <Videos id="videos" />
+        </li>
+        <li className="nav-item nav-link">
+          <Photos id="photos" className="nav-link" />
+        </li>
+      </ul>
 
-      
+
     </div>
   );
 };
