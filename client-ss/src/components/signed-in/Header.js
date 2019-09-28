@@ -14,6 +14,7 @@ class Header extends React.Component {
         return (
           <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark d-flex bd-highlight">
             <Link className="navbar-brand font-weight-bold p-2 flex-grow-1 bd-highlight" to="/">
+            <img src={require('./imgs/logoformat.png')} alt="sportsocialize" className="img-fluid rounded" style={{ width: '65px', marginRight: '5px'}} />
               SportSocialize
             </Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,7 +46,8 @@ class Header extends React.Component {
         return (
           <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
             <Link className="navbar-brand font-weight-bold" to="/logged">
-              SportSocialize
+              <img src={require('./imgs/logoformat.png')} alt="sportsocialize" className="img-fluid rounded" style={{ width: '65px', marginRight: '5px'}} />
+               SportSocialize
           </Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>

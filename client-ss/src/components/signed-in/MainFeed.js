@@ -10,7 +10,7 @@ class MainFeed extends React.Component {
     const token = localStorage.getItem('currentUser');
     const response = await $http.get(`/api/users/posts`, {
       headers: {
-        "Authorization": `Bearer ${token}`
+        'Authorization': `Bearer ${token}`
       }
     })
 

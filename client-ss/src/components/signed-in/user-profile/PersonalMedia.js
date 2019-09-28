@@ -5,16 +5,14 @@ import axios from 'axios';
 import jwt from "jsonwebtoken";
 
 class PersonalMedia extends React.Component {
-  state = { data: [] };
-
-  // getData = async () => {
-  //   return await $http.get('/api/users/posts');
-  // }
-
-
+  state = {
+    data: [],
+    title: '',
+    description: '',
+    photoUrl: '',
+  };
 
   async componentDidMount() {
-
     const token = localStorage.getItem('currentUser');
     const decoded = jwt.decode(token);
     const response = await $http.get(`/api/users/posts/${decoded.sub}`, {
@@ -22,11 +20,50 @@ class PersonalMedia extends React.Component {
         "Authorization": `Bearer ${token}`
       }
     })
-
+    console.log(response);
     this.setState({ data: response.data });
-    console.log(this.state.data);
   }
 
+
+  onTitleChange = event => {
+    this.setState({ title: event.target.value });
+  };
+
+  onDescriptionChange = event => {
+    this.setState({ description: event.target.value });
+  };
+
+  onUrlChange = event => {
+    this.setState({ photoUrl: event.target.value });
+  };
+
+  onFormSubmit = async event => {
+    event.preventDefault();
+    const token = localStorage.getItem('currentUser');
+    const decoded = jwt.decode(token);
+
+    console.log(token)
+    console.log(decoded.sub)
+
+    const axiosInstance = await axios.create({
+      baseURL: `http://localhost:3002`,
+      headers: { Authorization: `Bearer ${token}` },
+    });
+
+    axiosInstance.post(`/api/users/${decoded.sub}/posts`, {
+      title: this.state.title,
+      description: this.state.description,
+      photoUrl: this.state.photoUrl,
+    })
+
+    //   const request = $http.post(`/api/users/${decoded.sub}/posts`, {
+    //     headers: { Authorization: `Bearer ${token}` },
+    //       title: this.state.title,
+    //       description: this.state.description,
+    //       photoUrl: this.state.photoUrl,
+    //   });
+    await window.location.reload()
+  };
 
   render() {
 
@@ -56,35 +93,30 @@ class PersonalMedia extends React.Component {
     return (
       <div>
 
-
-        <div className="card mb-3" style={{ maxWidth: "540px" }}>
-          <div className="row no-gutters">
-            <div className="col-md-4">
-              <img src={require('../imgs/dietFood.jpg')} alt="MikeTyson" className="card-img" />
-            </div>
-            <div className="col-md-8">
-              <div className="card-body">
-                <h5 className="card-title">Write post</h5>
-                <p className="card-text">
-                  <textarea className="form-control" aria-label="With textarea"></textarea>
-                </p>
-                <p className="card-text">
-
-                  <div className="input-group mb-3">
-                    <div className="custom-file">
-                      <input type="file" className="custom-file-input" id="inputGroupFile02" />
-                      <label className="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
-                    </div>
-                    <div className="input-group-append">
-                      <span className="input-group-text" id="inputGroupFileAddon02">Upload</span>
-                    </div>
-                  </div>
-                </p>
+        <form onSubmit={this.onFormSubmit}>
+          <div className="card mb-3" style={{ maxWidth: "540px" }}>
+            <div className="row no-gutters">
+              <div className="col-md-4">
+                <img src={require('../imgs/logoformat.png')} alt="sportsocialize" className="card-img" />
+              </div>
+              <div className="col-md-8">
+                <div className="card-body">
+                  <h5 className="card-title">Write post</h5>
+                  <input type="text" class="form-control" onChange={this.onTitleChange} value={this.state.title} placeholder="Title" aria-label="Title" aria-describedby="basic-addon1" /><br />
+                  <p className="card-text">
+                    <textarea onChange={this.onDescriptionChange} value={this.state.description} className="form-control" placeholder="Description" aria-label="With textarea"></textarea>
+                  </p>
+                  <p className="card-text">
+                    <span class="input-group-text" id="basic-addon1">IMAGE URL</span>
+                    <input type="text" class="form-control" onChange={this.onUrlChange} value={this.state.photoUrl} placeholder="https://" aria-label="url" aria-describedby="basic-addon1" />
+                    <br />
+                  </p>
+                </div>
               </div>
             </div>
+            <button type="submit" className="btn btn-primary">Add Post</button>
           </div>
-          <button type="button" className="btn btn-primary">Add Post</button>
-        </div>
+        </form>
 
         {allImages}
 

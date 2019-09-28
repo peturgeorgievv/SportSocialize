@@ -74,14 +74,20 @@ export class UsersService {
     const post = await this.postsRepository.find({
       where: { user: userId },
     });
+    return post;
+  }
+
+  async getAllUsersPosts() {
+    const post = await this.postsRepository.find();
     console.log(post);
     return post;
   }
 
-  async createPost(user, postData) {
+  async createPost(userId, postData) {
+    console.log(userId);
     const { title, description, photoUrl } = postData;
     const foundUser = await this.usersRepository.findOne({
-      where: { username: user.username },
+      where: { id: userId },
     });
     const newPost = this.postsRepository.create({
       title,

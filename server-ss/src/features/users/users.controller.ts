@@ -36,17 +36,24 @@ export class UsersController {
   //   return await this.userService.getPosts(postId);
   // }
 
+  @Get('users/posts')
+  @UseGuards(AuthGuard('jwt'))
+  async getAllUsersPosts() {
+    return await this.userService.getAllUsersPosts();
+  }
+
   @Get('users/posts/:userId')
   @UseGuards(AuthGuard('jwt'))
   async getAllPosts(@Param('userId') userId: string) {
     return await this.userService.getAllPosts(userId);
   }
 
-  @Post('users/posts')
+  @Post('users/:userId/posts')
   @UseGuards(AuthGuard('jwt'))
-  async createPost(@Req() request, @Body() postData) {
-    console.log(request.user);
-    return await this.userService.createPost(request.user, postData);
+  async createPost(@Param('userId') userId: string, @Body() postData) {
+    console.log(userId);
+    console.log(postData);
+    return await this.userService.createPost(userId, postData);
   }
 
   @UseGuards(AuthGuard('local'))
