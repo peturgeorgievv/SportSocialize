@@ -1,7 +1,9 @@
 import React from 'react';
 import Header from '../signed-in/Header';
 import $http from '../../api/users';
-import { Redirect } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+
+
 
 class Login extends React.Component {
   state = {
@@ -27,7 +29,10 @@ class Login extends React.Component {
     const response = await request.data.access_token;
     localStorage.setItem('currentUser', (response));
     this.setState({ isLogged: true });
+    this.props.history.push('/logged');
   };
+
+
 
   render() {
 
@@ -59,4 +64,4 @@ class Login extends React.Component {
   }
 };
 
-export default Login;
+export default withRouter(Login);

@@ -6,10 +6,11 @@ import { Module } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { UsersController } from './users.controller';
 import { JwtModule } from '@nestjs/jwt';
+import { Posts } from '../../database/entities/posts.entity';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([Users]),
+    TypeOrmModule.forFeature([Users, Posts]),
     JwtModule.register({
       secret: jwtConstants.secret,
       signOptions: { expiresIn: '120s' },

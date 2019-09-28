@@ -1,9 +1,15 @@
-import { PrimaryGeneratedColumn, Column, BeforeInsert, Entity } from 'typeorm';
+import {
+  PrimaryGeneratedColumn,
+  Column,
+  BeforeInsert,
+  Entity,
+  OneToMany,
+} from 'typeorm';
 import * as crypto from 'crypto';
+import { Posts } from './posts.entity';
 
 @Entity('users')
 export class Users {
-
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
@@ -35,4 +41,7 @@ export class Users {
 
   @Column({ type: 'bool', nullable: false, default: false })
   isDeleted: boolean;
+
+  @OneToMany(type => Posts, posts => posts.user)
+  post: Promise<Posts[]>;
 }

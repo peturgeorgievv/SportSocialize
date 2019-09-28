@@ -3,12 +3,15 @@ import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { validate } from 'class-validator';
+import { Posts } from '../../database/entities/posts.entity';
 
 @Injectable()
 export class UsersService {
   public constructor(
     @InjectRepository(Users)
     private readonly usersRepository: Repository<Users>,
+    @InjectRepository(Posts)
+    private readonly postsRepository: Repository<Posts>,
   ) {}
 
   async oneUser(username: string) {
@@ -45,6 +48,7 @@ export class UsersService {
       email,
       password,
     });
+    newUser.post = Promise.resolve([]);
 
     // Validate from UserEntity DECORATORS !!!
     const errors = await validate(newUser);
@@ -59,5 +63,38 @@ export class UsersService {
       const savedUser = await this.usersRepository.save(newUser);
       return savedUser;
     }
+  }
+
+  // async getPosts(postId: string) {
+  //   const post = await this.postsRepository.findOne({ where: { id: postId } });
+  //   return post;
+  // }
+
+  async getAllPosts(userId: string) {
+    const post = await this.postsRepository.find({
+      where: { user: userId },
+    });
+    console.log(post);
+    return post;
+  }
+
+  async createPost(user, postData) {
+    const { title, description, photoUrl } = postData;
+    const foundUser = await this.usersRepository.findOne({
+      where: { username: user.username },
+    });
+    const newPost = this.postsRepository.create({
+      title,
+      description,
+      photoUrl,
+    });
+
+    const userIds = await foundUser.post;
+    userIds.push(newPost);
+
+    const savedPost = await this.postsRepository.save(newPost);
+    const savedUser = await this.usersRepository.save(foundUser);
+
+    return savedPost;
   }
 }

@@ -8,8 +8,10 @@ import {
   Param,
   UseGuards,
   Request,
+  Req,
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
+import { request } from 'https';
 
 @Controller('api')
 export class UsersController {
@@ -29,10 +31,27 @@ export class UsersController {
     return await this.userService.registerUser(userData);
   }
 
+  // @Get('users/posts/:postId')
+  // async getPosts(@Param('postId') postId: string) {
+  //   return await this.userService.getPosts(postId);
+  // }
+
+  @Get('users/posts/:userId')
+  @UseGuards(AuthGuard('jwt'))
+  async getAllPosts(@Param('userId') userId: string) {
+    return await this.userService.getAllPosts(userId);
+  }
+
+  @Post('users/posts')
+  @UseGuards(AuthGuard('jwt'))
+  async createPost(@Req() request, @Body() postData) {
+    console.log(request.user);
+    return await this.userService.createPost(request.user, postData);
+  }
+
   @UseGuards(AuthGuard('local'))
   @Post('login')
   async login(@Request() req) {
-    console.log(req);
     return this.authService.login(req.user);
   }
 
