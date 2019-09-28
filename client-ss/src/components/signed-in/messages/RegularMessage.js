@@ -3,9 +3,11 @@ import React from 'react';
 
 const RegularMessage = () => {
   return (
-      <div className="col s6 center">
-        <a className="btn-large blue" href="#!">Regular Messages</a>
+    <div>
+      <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+        <button type="button" class="btn btn-primary btn-lg">Regular Messages</button>
       </div>
+    </div>
   );
 };
 

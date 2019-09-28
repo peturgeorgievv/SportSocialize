@@ -4,10 +4,20 @@ import PriorityMessage from './PriorityMessage';
 
 const MessageType = () => {
   return (
-      <div className="row container">
-        <RegularMessage />
-        <PriorityMessage />
-      </div>
+    <div>
+      <ul class="nav nav-pills nav-justified">
+        <li class="nav-item">
+          <a class="nav-link" href="#!">
+            <RegularMessage />
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#!">
+            <PriorityMessage />
+          </a>
+        </li>
+      </ul>
+    </div>
   );
 };
 

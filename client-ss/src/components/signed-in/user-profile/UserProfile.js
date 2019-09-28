@@ -18,23 +18,21 @@ class UserProfile extends React.Component {
   render() {
     return (
       <div>
-        <Header 
+        <Header
           firstName={this.state.data.firstName}
           lastName={this.state.data.lastName}
         />
         <Media />
-      <div className="row" style={{display: 'block'}}>
-          <div className="col s7">
-            <PersonalMedia/>
-          </div>
-          <div className="col s3">
+
+        <div class="container">
+          <div class="row">
+            <PersonalMedia />
             <PersonalInfo />
-          </div>
-          <div className="col s2">
             <SideMenu />
           </div>
+        </div>
       </div>
-      </div>
+
     );
   }
 };

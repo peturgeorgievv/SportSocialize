@@ -2,9 +2,11 @@ import React from 'react';
 
 const PriorityMessage = () => {
   return (
-      <div className="col s6 center">
-        <a className="btn-large blue" href="#!">Priority Messages</a>
+    <div>
+      <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+        <button type="button" class="btn btn-primary btn-lg">Priority Messages</button>
       </div>
+    </div>
   );
 };
 

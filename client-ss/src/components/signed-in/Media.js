@@ -5,9 +5,21 @@ import Photos from './Photos';
 
 const Media = () => {
   return (
-    <div className="row container">
-      <Videos id="videos" className="col s6"/>
-      <Photos id="photos" className="col s6"/>
+    <div>
+    <ul class="nav nav-pills nav-justified">
+  <li class="nav-item">
+  <a class="nav-link" href="#!">
+    <Videos id="videos"/>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#!">
+      <Photos id="photos" className="nav-link"/>
+    </a>
+  </li>
+</ul>
+
+      
     </div>
   );
 };

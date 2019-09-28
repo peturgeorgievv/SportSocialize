@@ -9,39 +9,30 @@ const MessageFeed = () => {
   const chatMessage3 = 'Well this is some msg...';
   return (
     <div className="container">
-    <ul class="collection">
-    <li class="collection-item avatar">
-      <img 
-        className="responsive-img circle"
-        src={require('../imgs/profil-pic-post.jpg')} 
-        alt=""
-      />
-      <span class="title">{userName1}</span>
-      <p>{chatMessage1}</p>
-      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-    </li>
-    <li class="collection-item avatar">
-    <img 
-        className="responsive-img circle"
-        src={require('../imgs/profil-pic-post.jpg')}
-        alt="profile-pic-user"
-      />
-      <span class="title">{userName2}</span>
-      <p>{chatMessage2}</p>
-      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-    </li>
-    <li class="collection-item avatar">
-    <img 
-        className="responsive-img circle"
-        src={require('../imgs/profil-pic-post.jpg')}
-        alt="profile-pic-user"
-      />
-      <span class="title">{userName3}</span>
-      <p>{chatMessage3}</p>
-      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-    </li>
-  </ul>
-</div>
+      <div class="media">
+        <img src={require('../imgs/profil-pic-post.jpg')} class="mr-3" alt="..." />
+        <div class="media-body">
+          <h5 class="mt-0">{userName1}</h5>
+          {chatMessage1}
+        </div>
+      </div><br />
+
+      <div class="media">
+        <img src={require('../imgs/profil-pic-post.jpg')} class="mr-3" alt="..." />
+        <div class="media-body">
+          <h5 class="mt-0">{userName2}</h5>
+          {chatMessage2}
+        </div>
+      </div><br />
+
+      <div class="media">
+        <img src={require('../imgs/profil-pic-post.jpg')} class="mr-3" alt="..." />
+        <div class="media-body">
+          <h5 class="mt-0">{userName3}</h5>
+          {chatMessage3}
+        </div>
+      </div><br />
+    </div>
   );
 };
 

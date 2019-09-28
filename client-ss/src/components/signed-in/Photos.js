@@ -2,17 +2,19 @@ import React from 'react';
 
 const Photos = () => {
   return (
-      <div className="col s6 center">
-        <a className="btn-large blue" href="#!">All Photos</a>
-          <ul id="dropdown1" class="dropdown-content">
-              <li><a href="#!">one</a></li>
-              <li><a href="#!">two</a></li>
-              <li className="divider"></li>
-              <li><a href="#!">three</a></li>
-          </ul>
-        <ul class="right hide-on-med-and-down">
-          <li><a className="dropdown-trigger btn-large blue" href="#!" data-target="dropdown1">Category<i className="material-icons right">arrow_drop_down</i></a></li>
-        </ul>
+      <div>
+          <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+          <button type="button" class="btn btn-primary btn-lg">All Photos</button>
+          <div class="btn-group" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Categories
+            </button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+              <a class="dropdown-item" href="#!">Dropdown link</a>
+              <a class="dropdown-item" href="#!">Dropdown link</a>
+            </div>
+          </div>
+        </div>
       </div>
   );
 };

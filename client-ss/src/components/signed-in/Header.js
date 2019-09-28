@@ -9,69 +9,73 @@ class Header extends React.Component {
     // Auto initialize all the things!
     M.AutoInit();
   }
-        
+
   render() {
-  return (
-    <div>
-      <ul id="dropdown1" className="dropdown-content">
-        <li><a href="#!">one</a></li>
-        <li><a href="#!">two</a></li>
-        <li className="divider"></li>
-        <li><a href="#!">three</a></li>
-      </ul>
-      <nav>
-        <div className="nav-wrapper blue">
-          <Link  className="brand-logo" to="/">
-            <img
-                className="responsive-img circle"
-                id="profile-pic"
-                src={require('./imgs/profile-pic.jpg')}
-                alt="profile-pic"
-              />
+    return (
+
+      <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+        <Link className="navbar-brand font-weight-bold" to="/logged">
+          SportSocialize
           </Link>
-          
-          <ul className="right hide-on-med-and-down">
-          <li>          
-           <Link id="profile-name-link" to="/logged/user">
-         <button className="btn-large green" id="profile-name">{this.props.firstName}(Petar Georgiev) {this.props.lastName}</button>
-         </Link>
-          </li>
-            <li><div className="nav-wrapper">
-          <form>
-            <div className="input-field">
-              <input id="search" type="search" required />
-              <label className="label-icon" for="search"><i className="material-icons">search</i></label>
-              <i className="material-icons">close</i>
-            </div>
-          </form>
-        </div></li>
-            <li>
-              <Link to="/logged/messages">
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-item active">
+              <Link className="nav-link btn btn-dark font-weight-bold text-white bg-dark" id="profile-name-link" to="/logged/user">
+                <img
+                  className="img-fluid rounded"
+                  id="profile-pic"
+                  src={require('./imgs/profile-pic.jpg')}
+                  alt="profile-pic"
+                  style={{ width: '45px' }}
+                />
+                {this.props.firstName} (Petar Georgiev) {this.props.lastName}
+                <span class="sr-only">(current)</span>
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link className="nav-link btn btn-dark btn-lg font-weight-bold text-white bg-dark" to="/logged/messages">
                 Chat
-              </Link>
-           </li>
-            <li>
-              <Link to="/logged/user/subscriptions">
+        </Link>
+            </li>
+            <li class="nav-item">
+              <Link className="nav-link btn btn-dark btn-lg font-weight-bold text-white bg-dark" to="/logged/user/subscriptions">
                 Subscriptions
-              </Link>
+        </Link>
             </li>
-            <li>
-              <Link to="/logged/settings">
+            <li class="nav-item">
+              <Link className="nav-link btn btn-dark btn-lg font-weight-bold text-white bg-dark" to="/logged/settings">
                 Settings
-              </Link>
+        </Link>
             </li>
-            <li>
-              <Link to="/">
+            <li class="nav-item">
+              <Link className="nav-link btn btn-dark btn-lg font-weight-bold text-white bg-danger" to="/">
                 Sign Out
-              </Link>
+        </Link>
             </li>
-            <li><a className="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i className="material-icons right">arrow_drop_down</i></a></li>
+            {/* <li className="nav-item dropdown">
+        <a className="nav-link dropdown-toggle" href="#!" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a className="dropdown-item" href="#!">Action</a>
+          <a className="dropdown-item" href="#!">Another action</a>
+          <div className="dropdown-divider"></div>
+          <a className="dropdown-item" href="#!">Something else here</a>
+        </div>
+      </li> */}
           </ul>
+          <form className="form-inline my-2 my-lg-0">
+            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+            <button className="btn-dark btn-lg my-2 my-sm-0" type="submit">Search</button>
+          </form>
         </div>
       </nav>
-    </div>
-  );
-};
+    );
+  };
 }
 
 export default Header;

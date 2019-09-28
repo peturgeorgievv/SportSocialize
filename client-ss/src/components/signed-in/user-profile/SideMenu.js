@@ -2,14 +2,15 @@ import React from 'react';
 
 const SideMenu = () => {
   return (
-
-      <div className="col s12">
-        <button className="btn-small blue col s7" id="subscribe">Subscribe</button>
-        <button className="btn-small blue col s7">Videos</button>
-        <button className="btn-small blue col s7">Pictures</button>
-        <button className="btn-small blue col s7">Certificates</button>
-        <button className="btn-small blue col s7">5</button>
+    <div className="col 2">
+      <div class="btn-group-vertical" role="group">
+        <button type="button" class="btn btn-primary btn-lg">Subscribe</button>
+        <button type="button" class="btn btn-primary btn-lg">Videos</button>
+        <button type="button" class="btn btn-primary btn-lg">Pictures</button>
+        <button type="button" class="btn btn-primary btn-lg">Certificates</button>
+        <button type="button" class="btn btn-primary btn-lg">5</button>
       </div>
+    </div>
   );
 };
 
