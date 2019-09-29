@@ -1,15 +1,12 @@
 import React from 'react';
-import Header from '../Header';
 import $http from '../../api/users';
 import { withRouter } from 'react-router-dom';
-
 
 
 class Login extends React.Component {
   state = {
     username: "",
     password: "",
-    isLogged: false,
   };
 
   onUsernameChange = event => {
@@ -28,15 +25,12 @@ class Login extends React.Component {
     })
     const response = await request.data.access_token;
     localStorage.setItem('currentUser', (response));
-    this.setState({ isLogged: true });
+
     this.props.history.push('/logged');
+    window.location.reload(); // Have to remove later on!
   };
 
-
-
   render() {
-
-
     return (
       <div>
         <form onSubmit={this.onFormSubmit}>
@@ -62,5 +56,6 @@ class Login extends React.Component {
     );
   }
 };
+
 
 export default withRouter(Login);

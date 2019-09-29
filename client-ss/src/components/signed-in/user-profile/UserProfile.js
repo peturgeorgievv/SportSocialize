@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../../Header';
 import Media from '../Media';
 import PersonalInfo from './PersonalInfo';
 import PersonalMedia from './PersonalMedia';
