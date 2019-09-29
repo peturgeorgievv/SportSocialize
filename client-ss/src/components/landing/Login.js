@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../signed-in/Header';
+import Header from '../Header';
 import $http from '../../api/users';
 import { withRouter } from 'react-router-dom';
 
@@ -39,7 +39,6 @@ class Login extends React.Component {
 
     return (
       <div>
-        <Header />
         <form onSubmit={this.onFormSubmit}>
           <input
             type="text"

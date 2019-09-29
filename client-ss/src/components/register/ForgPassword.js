@@ -1,10 +1,9 @@
 import React from 'react';
-import Header from '../signed-in/Header';
+import Header from '../Header';
 
 const ForgPassword = () => {
   return (
     <div>
-      <Header />
       ForgPassword
     </div>
   );

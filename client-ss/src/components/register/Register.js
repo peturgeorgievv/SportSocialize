@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../signed-in/Header';
+import Header from '../Header';
 import $http from '../../api/users';
 
 
@@ -66,7 +66,6 @@ class Register extends React.Component {
   render() {
     return (
       <div>
-        <Header />
         <form className="needs-validation container" novalidate onSubmit={this.onFormSubmit}>
           <div className="form-group row">
             <div className="col-md-4 mb-3">

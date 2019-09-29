@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../Header';
+import Header from '../../Header';
 import Subscribers from './Subscribers';
 import { Link } from 'react-router-dom';
 
@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 const Subscriptions = () => {
   return (
     <div>
-      <Header />
       <ul class="nav nav-pills nav-justified">
         <li class="nav-item">
           <a class="nav-link" href="#!">

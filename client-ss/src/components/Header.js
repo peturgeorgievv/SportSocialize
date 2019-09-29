@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class Header extends React.Component {
+  state = {
+    data: [],
+  };
 
   signOut() {
     localStorage.removeItem('currentUser');
@@ -14,7 +17,7 @@ class Header extends React.Component {
         return (
           <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark d-flex bd-highlight">
             <Link className="navbar-brand font-weight-bold p-2 flex-grow-1 bd-highlight" to="/">
-            <img src={require('./imgs/logoformat.png')} alt="sportsocialize" className="img-fluid rounded" style={{ width: '65px', marginRight: '5px'}} />
+            <img src={require('./signed-in/imgs/logoformat.png')} alt="sportsocialize" className="img-fluid rounded" style={{ width: '65px', marginRight: '5px'}} />
               SportSocialize
             </Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,7 +49,7 @@ class Header extends React.Component {
         return (
           <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
             <Link className="navbar-brand font-weight-bold" to="/logged">
-              <img src={require('./imgs/logoformat.png')} alt="sportsocialize" className="img-fluid rounded" style={{ width: '65px', marginRight: '5px'}} />
+              <img src={require('./signed-in/imgs/logoformat.png')} alt="sportsocialize" className="img-fluid rounded" style={{ width: '65px', marginRight: '5px'}} />
                SportSocialize
           </Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,12 +58,12 @@ class Header extends React.Component {
 
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav mr-auto">
-                <li className="nav-item active">
+                <li className="nav-item">
                   <Link className="nav-link btn btn-dark font-weight-bold text-white bg-dark" id="profile-name-link" to="/logged/user">
                     <img
                       className="img-fluid rounded"
                       id="profile-pic"
-                      src={require('./imgs/profile-pic.jpg')}
+                      src={require('./signed-in/imgs/profile-pic.jpg')}
                       alt="profile-pic"
                       style={{ width: '45px' }}
                     />
@@ -76,11 +79,6 @@ class Header extends React.Component {
                 <li className="nav-item">
                   <Link className="nav-link btn btn-dark btn-lg font-weight-bold text-white bg-dark" to="/logged/user/subscriptions">
                     Subscriptions
-        </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link btn btn-dark btn-lg font-weight-bold text-white bg-dark" to="/logged/settings">
-                    Settings
         </Link>
                 </li>
                 <li className="nav-item">

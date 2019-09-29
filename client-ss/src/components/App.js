@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
+import Header from './Header'
 import Landing from '../components/landing/Landing';
 import Register from './register/Register';
 import ForgPassword from './register/ForgPassword';
@@ -9,8 +10,6 @@ import Messages from '../components/signed-in/messages/Messages';
 import UserProfile from '../components/signed-in/user-profile/UserProfile';
 import styled from 'styled-components';
 import MainFooter from './MainFooter';
-import Settings from './signed-in/settings/Settings';
-import Search from './signed-in/search/Search';
 import Subscriptions from './signed-in/subscribe/Subscriptions';
 import SubscribedTo from './signed-in/subscribe/SubscribedTo';
 
@@ -21,8 +20,10 @@ const FullPage = styled.div`
 const App = () => {
   return (
     <FullPage>
+    
       <BrowserRouter>
         <div>
+        <Header />
           <Route exact path="/" component={Landing} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
@@ -39,8 +40,6 @@ const App = () => {
             path="/logged/user/subscribed"
             component={SubscribedTo}
           />
-          <Route exact path="/logged/settings" component={Settings} />
-          <Route exact path="/logged/search" component={Search} />
           <Route exact path="/logged/messages" component={Messages} />
         </div>
       </BrowserRouter>
