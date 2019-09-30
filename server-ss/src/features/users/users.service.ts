@@ -103,4 +103,14 @@ export class UsersService {
 
     return savedPost;
   }
+
+  async uploadAvatar(file, userId: string) {
+    const foundUser = await this.usersRepository.findOne({
+      where: { id: userId },
+    });
+    foundUser.avatarUrl = file.path;
+
+    const savedUser = await this.usersRepository.save(foundUser);
+    return savedUser;
+  }
 }

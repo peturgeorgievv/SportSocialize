@@ -42,6 +42,9 @@ export class Users {
   @Column({ type: 'bool', nullable: false, default: false })
   isDeleted: boolean;
 
+  @Column({ type: 'nvarchar', default: null })
+  avatarUrl: string;
+
   @OneToMany(type => Posts, posts => posts.user)
   post: Promise<Posts[]>;
 }

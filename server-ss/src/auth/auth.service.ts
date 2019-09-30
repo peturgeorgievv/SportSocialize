@@ -1,6 +1,7 @@
 import { UsersService } from '../features/users/users.service';
 import { Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
+import * as crypto from 'crypto';
 
 @Injectable()
 export class AuthService {
@@ -11,6 +12,7 @@ export class AuthService {
 
   async validateUser(username: string, pass: string): Promise<any> {
     const user = await this.usersService.oneUser(username);
+    pass = crypto.createHmac('sha256', pass).digest('hex');
 
     if (user && user.password === pass) {
       const { password, ...result } = user;

@@ -9,9 +9,12 @@ import {
   UseGuards,
   Request,
   Req,
+  UseInterceptors,
+  UploadedFile,
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { request } from 'https';
+import { FileInterceptor } from '@nestjs/platform-express';
 
 @Controller('api')
 export class UsersController {
@@ -66,5 +69,15 @@ export class UsersController {
   @Get('me')
   getProfile(@Request() req) {
     return req.user;
+  }
+
+  @Post('users/:id/avatar')
+  @UseInterceptors(FileInterceptor('file'))
+  public async uploadUserAvatar(
+    @UploadedFile() file,
+    @Param('id') userId: string,
+  ) {
+    console.log(file);
+    return await this.userService.uploadAvatar(file, userId);
   }
 }
