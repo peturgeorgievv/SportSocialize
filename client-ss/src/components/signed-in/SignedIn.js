@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../Header';
 import Media from './Media';
 import MainFeed from './MainFeed';
 import $http from '../../api/users';
@@ -8,7 +7,13 @@ class SignedIn extends React.Component {
   state = { data: [] };
 
   async componentDidMount() {
-    const response = await $http.get('/api/users')
+    const token = localStorage.getItem('currentUser');
+    const response = await $http.get(`/api/users/posts`, {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    })
+
     this.setState({ data: response.data });
   }
 
@@ -16,7 +21,7 @@ class SignedIn extends React.Component {
     return (
       <div>
         <Media />
-        <MainFeed />
+        <MainFeed allPosts={this.state.data} />
       </div>
     );
   }

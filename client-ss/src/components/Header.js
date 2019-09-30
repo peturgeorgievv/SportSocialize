@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-
+import { withRouter } from 'react-router-dom';
 class Header extends React.Component {
   state = {
     data: [],
-    logged: false,
   };
 
   signOut = () => {
-    this.setState({ logged: false })
     localStorage.removeItem('currentUser');
+    this.props.history.push('/');
+    window.location.reload(); // Have to remove later on!
   }
 
   renderContent() {
@@ -107,4 +107,4 @@ function mapStateToProps({ auth }) {
   return { auth };
 }
 
-export default connect(mapStateToProps)(Header);
+export default withRouter(connect(mapStateToProps)(Header));

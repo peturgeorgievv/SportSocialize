@@ -1,28 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import $http from '../../api/users';
-// Have to change user-pic className to unique ID of the user
 
 class MainFeed extends React.Component {
-  state = { data: [] };
-
-  async componentDidMount() {
-    const token = localStorage.getItem('currentUser');
-    const response = await $http.get(`/api/users/posts`, {
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
-    })
-
-    this.setState({ data: response.data });
-  }
-
-
-
 
   render() {
-
-    const allImages = this.state.data.map((image) => {
+    const allImages = this.props.allPosts ? this.props.allPosts.map((image) => {
       return (
         <div>
           <div className="card-deck">
@@ -39,7 +21,7 @@ class MainFeed extends React.Component {
           </div><br />
         </div>
       )
-    })
+    }) : "Loading...";
 
 
     return (

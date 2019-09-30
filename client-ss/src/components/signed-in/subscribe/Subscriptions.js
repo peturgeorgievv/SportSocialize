@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../../Header';
 import Subscribers from './Subscribers';
 import { Link } from 'react-router-dom';
 
